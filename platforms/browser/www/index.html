@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <title>App Ejemplo</title>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-2">
+            </div>    
+            <div class="col-sm-10">
+                <div id="contenidoLogin">
+
+                <div id="emailRegister" style="display: none;">
+                    <h4>Registro con firebase</h4>
+                    <input type="email" placeholder="email" id="userEmail" class="textArea" maxlength="40" />
+                    <input type="password" placeholder="password" maxlength="10" id="userPassword" class="textArea" />
+                </div>
+
+                <div id="buttonsRegister" style="display: none;">
+                    <button type="button" class="btn btn-success" id="loginEmail">Login</button>
+                    <button type="button" class="btn btn-info" id="signUpEmail">Registrarse</button>
+                    <button type="button" class="btn btn-warning" id="logOut">Cerrar sesion</button>      
+                </div>
+                </div>
+
+                <div id="contenido">
+                <div id="content" style="margin-top: 50px;">
+                    
+                    <h3>App para acceder a camara y guardar en base de datos.</h3>
+                    <div><button type="button" class="btn btn-primary" id="takePhoto">tomar foto</button></div><br>
+                    <div><button type="button" class="btn btn-primary" id="photoLibrary">abrir desde la galeria</button></div><br>
+                    <div><button type="button" class="btn btn-primary" id="obtenerDatos">Audio prueba</button></div><br>
+                    <div><button type="button" class="btn btn-primary" id="contactoUser">contactoUser</button></div><br>
+
+                     <div style="background-color: #76E8CF">
+                    <p style="text-align: center">Contacto seleccionado</p>
+                    <p>Nombre contacto. </p>
+                    <p id="nameContact"></p>
+                    <p>Numero contacto.</p>
+                    <p id="contactNumber"></p>
+                    </div><br>
+
+                    <img id="photo" src=""/><br>
+                    <h4 style="text-align: center;">TituloImagen</h4><br>
+                    <input type='text' id='title'>
+                    <br>
+
+                     <ul style="background-color: #56C9E8" id='list'></ul>
+                     <br>
+                     <h5 id="titleImg" style="background-color: #FF5E47"></h5>
+                </div>
+
+                 <div style="background-color: #ADFFFB;">
+                    <p id="geolocation">Ubicacion Gps...</p>
+                </div>
+
+                <div>
+                    <div><button type="button" class="btn btn-success" id="enviarDatos">Enviar al servidor</button>
+                    <button type="button" class="btn btn-secondary" id="insertarDatos">insertarDatos</button></div><br>
+                    <div><button type="button" class="btn btn-info" id="obtenerDatosTabla">datos sqLite</button>
+                    <button type="button" class="btn btn-danger" id="borrarDatos">borrarDatos</button></div>
+                    
+                </div>
+                <br>
+        
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+#fotos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.foto{
+    width:47%;
+    margin: 8px; 
+}
+
+img{
+    max-width: 100%;
+    vertical-align: top;
+}
+
+.icono_borrar{
+    width: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+
+}
+
+.foto{
+    position: relative;
+
+}
+
+.titulo{
+    font-size: 0.8em;
+    text-align:center;
+}
